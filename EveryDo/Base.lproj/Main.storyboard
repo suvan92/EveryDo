@@ -121,10 +121,10 @@
             </objects>
             <point key="canvasLocation" x="709" y="-630"/>
         </scene>
-        <!--View Controller-->
+        <!--Add To Do View Controller-->
         <scene sceneID="1oq-l5-JpM">
             <objects>
-                <viewController id="Za8-3g-17k" sceneMemberID="viewController">
+                <viewController id="Za8-3g-17k" customClass="AddToDoViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="9gz-ia-yEO"/>
                         <viewControllerLayoutGuide type="bottom" id="zVN-c6-eDK"/>
@@ -189,6 +189,11 @@
                             <constraint firstItem="Sro-g7-XuW" firstAttribute="top" secondItem="qgx-YX-EqP" secondAttribute="bottom" constant="8" id="tas-nD-Zds"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="descriptionTextField" destination="Sro-g7-XuW" id="Be0-0O-MzF"/>
+                        <outlet property="priorityTextField" destination="Dds-Wk-WLP" id="2PI-3g-1MH"/>
+                        <outlet property="titleTextField" destination="FTb-hV-jqa" id="RDt-WN-Y6S"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="BRH-ib-LVl" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
