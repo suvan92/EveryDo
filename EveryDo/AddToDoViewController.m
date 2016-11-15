@@ -31,8 +31,6 @@
 
 -(void)dissmissKeyboard:(UITapGestureRecognizer *)tapGR {
     [self.view endEditing:YES];
-    
-    
 }
 
 

@@ -116,15 +116,18 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" title="Master" id="Zdf-7t-Un8"/>
+                    <connections>
+                        <segue destination="Za8-3g-17k" kind="show" identifier="createNewTodo" id="Wxv-ut-qRX"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Rux-fX-hf1" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="709" y="-630"/>
+            <point key="canvasLocation" x="709" y="-632"/>
         </scene>
         <!--Add To Do View Controller-->
         <scene sceneID="1oq-l5-JpM">
             <objects>
-                <viewController id="Za8-3g-17k" customClass="AddToDoViewController" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="AddToDoVC" id="Za8-3g-17k" customClass="AddToDoViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="9gz-ia-yEO"/>
                         <viewControllerLayoutGuide type="bottom" id="zVN-c6-eDK"/>
@@ -197,7 +200,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="BRH-ib-LVl" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1413.75" y="-631.69014084507046"/>
+            <point key="canvasLocation" x="1498" y="-633"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="r7l-gg-dq7">

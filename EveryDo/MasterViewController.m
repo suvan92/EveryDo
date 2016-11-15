@@ -10,6 +10,7 @@
 #import "DetailViewController.h"
 #import "ToDo.h"
 #import "ToDoTableViewCell.h"
+#import "AddToDoViewController.h"
 
 @interface MasterViewController ()
 
@@ -28,8 +29,7 @@
     self.navigationItem.rightBarButtonItem = addButton;
     self.detailViewController = (DetailViewController *)[[self.splitViewController.viewControllers lastObject] topViewController];
     
-    self.listOfToDos = [NSMutableArray new];
-    [self createTodos];
+//    [self createTodos];
     
 }
 
@@ -47,12 +47,15 @@
 
 
 - (void)insertNewObject:(id)sender {
-//    if (!self.listOfToDos) {
-//        self.listOfToDos = [[NSMutableArray alloc] init];
-//    }
-    [self.listOfToDos insertObject:[NSDate date] atIndex:0];
-    NSIndexPath *indexPath = [NSIndexPath indexPathForRow:0 inSection:0];
-    [self.tableView insertRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationAutomatic];
+    if (!self.listOfToDos) {
+        self.listOfToDos = [[NSMutableArray alloc] init];
+    }
+    [self performSegueWithIdentifier:@"createNewTodo" sender:self];
+    
+    
+//    [self.listOfToDos insertObject:[NSDate date] atIndex:0];
+//    NSIndexPath *indexPath = [NSIndexPath indexPathForRow:0 inSection:0];
+//    [self.tableView insertRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationAutomatic];
 }
 
 
