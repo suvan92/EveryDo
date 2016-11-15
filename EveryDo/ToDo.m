@@ -10,4 +10,13 @@
 
 @implementation ToDo
 
+- (instancetype)init
+{
+    self = [super init];
+    if (self) {
+        self.isCompleted = NO;
+    }
+    return self;
+}
+
 @end

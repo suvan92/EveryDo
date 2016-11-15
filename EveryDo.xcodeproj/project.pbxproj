@@ -15,6 +15,7 @@
 		141FF5D11DDBA004003C9BAD /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 141FF5D01DDBA004003C9BAD /* Assets.xcassets */; };
 		141FF5D41DDBA004003C9BAD /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 141FF5D21DDBA004003C9BAD /* LaunchScreen.storyboard */; };
 		141FF5DD1DDBA060003C9BAD /* ToDo.m in Sources */ = {isa = PBXBuildFile; fileRef = 141FF5DC1DDBA060003C9BAD /* ToDo.m */; };
+		141FF5E51DDBA768003C9BAD /* ToDoTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 141FF5E41DDBA768003C9BAD /* ToDoTableViewCell.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -32,6 +33,8 @@
 		141FF5D51DDBA004003C9BAD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		141FF5DB1DDBA060003C9BAD /* ToDo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ToDo.h; sourceTree = "<group>"; };
 		141FF5DC1DDBA060003C9BAD /* ToDo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ToDo.m; sourceTree = "<group>"; };
+		141FF5E31DDBA768003C9BAD /* ToDoTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ToDoTableViewCell.h; sourceTree = "<group>"; };
+		141FF5E41DDBA768003C9BAD /* ToDoTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ToDoTableViewCell.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -64,15 +67,10 @@
 		141FF5C01DDBA004003C9BAD /* EveryDo */ = {
 			isa = PBXGroup;
 			children = (
-				141FF5C41DDBA004003C9BAD /* AppDelegate.h */,
-				141FF5C51DDBA004003C9BAD /* AppDelegate.m */,
-				141FF5C71DDBA004003C9BAD /* MasterViewController.h */,
-				141FF5C81DDBA004003C9BAD /* MasterViewController.m */,
-				141FF5CA1DDBA004003C9BAD /* DetailViewController.h */,
-				141FF5CB1DDBA004003C9BAD /* DetailViewController.m */,
-				141FF5DB1DDBA060003C9BAD /* ToDo.h */,
-				141FF5DC1DDBA060003C9BAD /* ToDo.m */,
-				141FF5CD1DDBA004003C9BAD /* Main.storyboard */,
+				141FF5E21DDBA729003C9BAD /* View */,
+				141FF5E11DDBA3F6003C9BAD /* UI */,
+				141FF5E01DDBA3EE003C9BAD /* Controllers */,
+				141FF5DE1DDBA3D2003C9BAD /* Models */,
 				141FF5D01DDBA004003C9BAD /* Assets.xcassets */,
 				141FF5D21DDBA004003C9BAD /* LaunchScreen.storyboard */,
 				141FF5D51DDBA004003C9BAD /* Info.plist */,
@@ -87,6 +85,45 @@
 				141FF5C21DDBA004003C9BAD /* main.m */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		141FF5DE1DDBA3D2003C9BAD /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				141FF5C41DDBA004003C9BAD /* AppDelegate.h */,
+				141FF5C51DDBA004003C9BAD /* AppDelegate.m */,
+				141FF5DB1DDBA060003C9BAD /* ToDo.h */,
+				141FF5DC1DDBA060003C9BAD /* ToDo.m */,
+			);
+			name = Models;
+			sourceTree = "<group>";
+		};
+		141FF5E01DDBA3EE003C9BAD /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				141FF5C71DDBA004003C9BAD /* MasterViewController.h */,
+				141FF5C81DDBA004003C9BAD /* MasterViewController.m */,
+				141FF5CA1DDBA004003C9BAD /* DetailViewController.h */,
+				141FF5CB1DDBA004003C9BAD /* DetailViewController.m */,
+			);
+			name = Controllers;
+			sourceTree = "<group>";
+		};
+		141FF5E11DDBA3F6003C9BAD /* UI */ = {
+			isa = PBXGroup;
+			children = (
+				141FF5CD1DDBA004003C9BAD /* Main.storyboard */,
+			);
+			name = UI;
+			sourceTree = "<group>";
+		};
+		141FF5E21DDBA729003C9BAD /* View */ = {
+			isa = PBXGroup;
+			children = (
+				141FF5E31DDBA768003C9BAD /* ToDoTableViewCell.h */,
+				141FF5E41DDBA768003C9BAD /* ToDoTableViewCell.m */,
+			);
+			name = View;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -163,6 +200,7 @@
 				141FF5DD1DDBA060003C9BAD /* ToDo.m in Sources */,
 				141FF5C61DDBA004003C9BAD /* AppDelegate.m in Sources */,
 				141FF5C91DDBA004003C9BAD /* MasterViewController.m in Sources */,
+				141FF5E51DDBA768003C9BAD /* ToDoTableViewCell.m in Sources */,
 				141FF5C31DDBA004003C9BAD /* main.m in Sources */,
 				141FF5CC1DDBA004003C9BAD /* DetailViewController.m in Sources */,
 			);
@@ -286,6 +324,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.suvanr.EveryDo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
 		};
@@ -297,6 +336,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.suvanr.EveryDo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
 		};
