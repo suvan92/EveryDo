@@ -8,7 +8,9 @@
 
 #import "AddToDoViewController.h"
 
-@interface AddToDoViewController ()
+@interface AddToDoViewController () <UITextFieldDelegate>
+
+@property (nonatomic, strong) ToDo *todoItem;
 
 @property (weak, nonatomic) IBOutlet UITextField *titleTextField;
 @property (weak, nonatomic) IBOutlet UITextField *descriptionTextField;
@@ -26,11 +28,45 @@
     self.tapGR = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(dissmissKeyboard:)];
     
     [self.view addGestureRecognizer:self.tapGR];
+    
+    self.todoItem = [[ToDo alloc] init];
+    
+    self.titleTextField.tag = 1;
+    self.descriptionTextField.tag = 2;
+    self.priorityTextField.tag = 3;
+    
+    UIBarButtonItem *saveButton = [[UIBarButtonItem alloc] initWithTitle:@"Save" style:UIBarButtonItemStyleDone target:self action:@selector(saveNewTodo:)];
+    self.navigationItem.rightBarButtonItem = saveButton;
 }
 
 
 -(void)dissmissKeyboard:(UITapGestureRecognizer *)tapGR {
     [self.view endEditing:YES];
+}
+
+
+-(void)textFieldDidEndEditing:(UITextField *)textField {
+    
+    if (textField.tag == 1) {
+        self.todoItem.title = textField.text;
+    } else if (textField.tag == 2) {
+        self.todoItem.todoDescription = textField.text;
+    } else if (textField.tag == 3) {
+        self.todoItem.priorityNumber = [textField.text intValue];
+    }
+}
+
+
+-(void)saveNewTodo:(id)saveButton {
+    
+    NSNotificationCenter *nCentre = [NSNotificationCenter defaultCenter];
+    
+    NSDictionary *userTodoItem = @{@"newTodoItem" : self.todoItem};
+    
+    NSNotification *notification = [[NSNotification alloc] initWithName:@"newTodo" object:nil userInfo:userTodoItem];
+    
+    [nCentre postNotification:notification];
+    
 }
 
 
