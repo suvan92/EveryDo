@@ -10,7 +10,7 @@
 
 @interface ToDoTableViewCell()
 
-@property (weak, nonatomic) IBOutlet UILabel *todoTiltleLabel;
+
 
 
 @end

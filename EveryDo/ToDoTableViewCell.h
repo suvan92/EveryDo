@@ -10,6 +10,6 @@
 
 @interface ToDoTableViewCell : UITableViewCell
 
-
+@property (weak, nonatomic) IBOutlet UILabel *todoTiltleLabel;
 
 @end

@@ -9,6 +9,7 @@
 #import "MasterViewController.h"
 #import "DetailViewController.h"
 #import "ToDo.h"
+#import "ToDoTableViewCell.h"
 
 @interface MasterViewController ()
 
@@ -30,8 +31,6 @@
     self.listOfToDos = [NSMutableArray new];
     [self createTodos];
     
-    
-    
 }
 
 
@@ -48,9 +47,9 @@
 
 
 - (void)insertNewObject:(id)sender {
-    if (!self.listOfToDos) {
-        self.listOfToDos = [[NSMutableArray alloc] init];
-    }
+//    if (!self.listOfToDos) {
+//        self.listOfToDos = [[NSMutableArray alloc] init];
+//    }
     [self.listOfToDos insertObject:[NSDate date] atIndex:0];
     NSIndexPath *indexPath = [NSIndexPath indexPathForRow:0 inSection:0];
     [self.tableView insertRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationAutomatic];
@@ -84,10 +83,10 @@
 
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"Cell" forIndexPath:indexPath];
+    ToDoTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"ToDoCell" forIndexPath:indexPath];
 
-    NSDate *object = self.listOfToDos[indexPath.row];
-    cell.textLabel.text = [object description];
+    ToDo *currentToDo = self.listOfToDos[indexPath.row];
+    cell.todoTiltleLabel.text = currentToDo.title;
     return cell;
 }
 
@@ -113,7 +112,7 @@
 -(void)createTodos {
     
     ToDo *todo1 = [[ToDo alloc] init];
-    todo1.title = @"Buy Milk";
+    todo1.title = @"Buy milk";
     todo1.todoDescription = @"Go to safeway on boradway and MacDonald and buy 2%% milk";
     todo1.priorityNumber = 3;
     
