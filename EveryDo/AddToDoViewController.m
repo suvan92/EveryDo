@@ -14,6 +14,7 @@
 @property (weak, nonatomic) IBOutlet UITextField *descriptionTextField;
 @property (weak, nonatomic) IBOutlet UITextField *priorityTextField;
 
+@property (nonatomic, strong) UITapGestureRecognizer *tapGR;
 
 @end
 
@@ -21,8 +22,19 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view.
+    
+    self.tapGR = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(dissmissKeyboard:)];
+    
+    [self.view addGestureRecognizer:self.tapGR];
 }
+
+
+-(void)dissmissKeyboard:(UITapGestureRecognizer *)tapGR {
+    [self.view endEditing:YES];
+    
+    
+}
+
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
