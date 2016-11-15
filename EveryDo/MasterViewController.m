@@ -87,7 +87,9 @@
 
     ToDo *currentToDo = self.listOfToDos[indexPath.row];
     
-    cell.todoTiltleLabel.text = currentToDo.title;
+    NSString *displayString = [NSString stringWithFormat:@"%@", currentToDo.title];
+    
+    cell.todoTiltleLabel.text = displayString;
     return cell;
 }
 
