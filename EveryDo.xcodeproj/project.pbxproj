@@ -16,6 +16,7 @@
 		141FF5D41DDBA004003C9BAD /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 141FF5D21DDBA004003C9BAD /* LaunchScreen.storyboard */; };
 		141FF5DD1DDBA060003C9BAD /* ToDo.m in Sources */ = {isa = PBXBuildFile; fileRef = 141FF5DC1DDBA060003C9BAD /* ToDo.m */; };
 		141FF5E51DDBA768003C9BAD /* ToDoTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 141FF5E41DDBA768003C9BAD /* ToDoTableViewCell.m */; };
+		141FF5E81DDBBA06003C9BAD /* AddToDoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 141FF5E71DDBBA06003C9BAD /* AddToDoViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -35,6 +36,8 @@
 		141FF5DC1DDBA060003C9BAD /* ToDo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ToDo.m; sourceTree = "<group>"; };
 		141FF5E31DDBA768003C9BAD /* ToDoTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ToDoTableViewCell.h; sourceTree = "<group>"; };
 		141FF5E41DDBA768003C9BAD /* ToDoTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ToDoTableViewCell.m; sourceTree = "<group>"; };
+		141FF5E61DDBBA06003C9BAD /* AddToDoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AddToDoViewController.h; sourceTree = "<group>"; };
+		141FF5E71DDBBA06003C9BAD /* AddToDoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AddToDoViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -105,6 +108,8 @@
 				141FF5C81DDBA004003C9BAD /* MasterViewController.m */,
 				141FF5CA1DDBA004003C9BAD /* DetailViewController.h */,
 				141FF5CB1DDBA004003C9BAD /* DetailViewController.m */,
+				141FF5E61DDBBA06003C9BAD /* AddToDoViewController.h */,
+				141FF5E71DDBBA06003C9BAD /* AddToDoViewController.m */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";
@@ -199,6 +204,7 @@
 			files = (
 				141FF5DD1DDBA060003C9BAD /* ToDo.m in Sources */,
 				141FF5C61DDBA004003C9BAD /* AppDelegate.m in Sources */,
+				141FF5E81DDBBA06003C9BAD /* AddToDoViewController.m in Sources */,
 				141FF5C91DDBA004003C9BAD /* MasterViewController.m in Sources */,
 				141FF5E51DDBA768003C9BAD /* ToDoTableViewCell.m in Sources */,
 				141FF5C31DDBA004003C9BAD /* main.m in Sources */,
