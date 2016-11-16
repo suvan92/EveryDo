@@ -24,7 +24,7 @@
     // Do any additional setup after loading the view, typically from a nib.
     self.navigationItem.leftBarButtonItem = self.editButtonItem;
 
-    UIBarButtonItem *addButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAdd target:self action:@selector(insertNewObject:)];
+    UIBarButtonItem *addButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAdd target:self action:@selector(goToAddTodoVC:)];
     self.navigationItem.rightBarButtonItem = addButton;
     self.detailViewController = (DetailViewController *)[[self.splitViewController.viewControllers lastObject] topViewController];
     
@@ -32,7 +32,9 @@
     
     [nCentre addObserver:self selector:@selector(insertNewTodo:) name:@"newTodo" object:nil];
     
+    self.listOfToDos = [NSMutableArray new];
     [self createTodos];
+    
 }
 
 
@@ -48,24 +50,26 @@
 }
 
 
-- (void)insertNewObject:(id)sender {
+- (void)goToAddTodoVC:(id)sender {
     if (!self.listOfToDos) {
         self.listOfToDos = [[NSMutableArray alloc] init];
     }
     [self performSegueWithIdentifier:@"createNewTodo" sender:self];
-    
-    
-//    [self.listOfToDos insertObject:[NSDate date] atIndex:0];
-//    NSIndexPath *indexPath = [NSIndexPath indexPathForRow:0 inSection:0];
-//    [self.tableView insertRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationAutomatic];
 }
 
 
 -(void)insertNewTodo:(NSNotification *)notification {
     ToDo *itemToAdd = [notification.userInfo objectForKey:@"newTodoItem"];
     
-    [self.listOfToDos addObject:itemToAdd];
+    if (itemToAdd.priorityNumber == 1) {
+        [self.listOfToDos insertObject:itemToAdd atIndex:0];
+    } else {
+        [self.listOfToDos addObject:itemToAdd];
+    }
     [self.tableView reloadData];
+}
+
+-(void)tableView:(UITableView *)tableView moveRowAtIndexPath:(NSIndexPath *)sourceIndexPath toIndexPath:(NSIndexPath *)destinationIndexPath{
 }
 
 
@@ -129,8 +133,8 @@
     
     ToDo *todo1 = [[ToDo alloc] init];
     todo1.title = @"Buy milk";
-    todo1.todoDescription = @"Go to safeway on boradway and MacDonald and buy 2%% milk";
-    todo1.priorityNumber = 3;
+    todo1.todoDescription = @"Go to safeway on boradway and MacDonald and buy 2% milk";
+    todo1.priorityNumber = 1;
     
     [self.listOfToDos addObject:todo1];
     
@@ -144,9 +148,15 @@
     ToDo *todo3 = [[ToDo alloc] init];
     todo3.title = @"Laundry";
     todo3.todoDescription = @"Take laundry to laundry room for washing and drying";
-    todo3.priorityNumber = 1;
+    todo3.priorityNumber = 2;
     
     [self.listOfToDos addObject:todo3];
 }
+
+
+
+
+
+
 
 @end

@@ -148,7 +148,7 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="FTb-hV-jqa">
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Title" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="FTb-hV-jqa">
                                 <rect key="frame" x="16" y="206" width="180" height="30"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="180" id="Byh-aZ-clB"/>
@@ -161,7 +161,7 @@
                                     <outlet property="delegate" destination="Za8-3g-17k" id="to3-1W-WRy"/>
                                 </connections>
                             </textField>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Sro-g7-XuW">
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Description" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Sro-g7-XuW">
                                 <rect key="frame" x="16" y="280" width="220" height="30"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="220" id="J8P-5K-wN9"/>
@@ -173,10 +173,10 @@
                                     <outlet property="delegate" destination="Za8-3g-17k" id="2vG-Nx-Ba3"/>
                                 </connections>
                             </textField>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Dds-Wk-WLP">
-                                <rect key="frame" x="16" y="354" width="40" height="30"/>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="1 (high), 2(low)" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Dds-Wk-WLP">
+                                <rect key="frame" x="16" y="354" width="115" height="30"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="40" id="cg7-vh-rnr"/>
+                                    <constraint firstAttribute="width" constant="115" id="cg7-vh-rnr"/>
                                 </constraints>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
