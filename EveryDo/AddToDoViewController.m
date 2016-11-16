@@ -73,7 +73,7 @@
     
     [nCentre postNotification:notification];
     
-    [self dismissViewControllerAnimated:YES completion:nil];
+    [self.navigationController popToRootViewControllerAnimated:YES];
 }
 
 
