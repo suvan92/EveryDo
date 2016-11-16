@@ -29,7 +29,9 @@
     self.navigationItem.rightBarButtonItem = addButton;
     self.detailViewController = (DetailViewController *)[[self.splitViewController.viewControllers lastObject] topViewController];
     
-//    [self createTodos];
+    NSNotificationCenter *nCentre = [NSNotificationCenter defaultCenter];
+    
+    [nCentre addObserver:self selector:@selector(insertNewTodo:) name:@"newTodo" object:nil];
     
 }
 
@@ -56,6 +58,14 @@
 //    [self.listOfToDos insertObject:[NSDate date] atIndex:0];
 //    NSIndexPath *indexPath = [NSIndexPath indexPathForRow:0 inSection:0];
 //    [self.tableView insertRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationAutomatic];
+}
+
+
+-(void)insertNewTodo:(NSNotification *)notification {
+    ToDo *itemToAdd = [notification.userInfo objectForKey:@"newTodoItem"];
+    
+    [self.listOfToDos addObject:itemToAdd];
+    [self.tableView reloadData];
 }
 
 

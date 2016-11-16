@@ -117,7 +117,7 @@
                     </tableView>
                     <navigationItem key="navigationItem" title="Master" id="Zdf-7t-Un8"/>
                     <connections>
-                        <segue destination="Za8-3g-17k" kind="show" id="Wxv-ut-qRX"/>
+                        <segue destination="Za8-3g-17k" kind="show" identifier="createNewTodo" id="Wxv-ut-qRX"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Rux-fX-hf1" sceneMemberID="firstResponder"/>

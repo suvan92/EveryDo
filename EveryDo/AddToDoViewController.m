@@ -40,6 +40,9 @@
 }
 
 
+#pragma mark - Textfield Delegate saving Todo properties
+
+
 -(void)dissmissKeyboard:(UITapGestureRecognizer *)tapGR {
     [self.view endEditing:YES];
 }
@@ -57,6 +60,9 @@
 }
 
 
+#pragma mark - post new todo with NSNC
+
+
 -(void)saveNewTodo:(id)saveButton {
     
     NSNotificationCenter *nCentre = [NSNotificationCenter defaultCenter];
@@ -67,6 +73,7 @@
     
     [nCentre postNotification:notification];
     
+    [self dismissViewControllerAnimated:YES completion:nil];
 }
 
 
