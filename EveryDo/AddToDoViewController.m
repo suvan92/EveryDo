@@ -35,7 +35,7 @@
     self.descriptionTextField.tag = 2;
     self.priorityTextField.tag = 3;
     
-    UIBarButtonItem *saveButton = [[UIBarButtonItem alloc] initWithTitle:@"Save" style:UIBarButtonItemStyleDone target:self action:@selector(saveNewTodo:)];
+    UIBarButtonItem *saveButton = [[UIBarButtonItem alloc] initWithTitle:@"Save" style:UIBarButtonItemStyleDone target:self action:@selector(saveNewTodo)];
     self.navigationItem.rightBarButtonItem = saveButton;
 }
 
@@ -63,7 +63,7 @@
 #pragma mark - post new todo with NSNC
 
 
--(void)saveNewTodo:(id)saveButton {
+-(void)saveNewTodo {
     
     NSNotificationCenter *nCentre = [NSNotificationCenter defaultCenter];
     

@@ -33,6 +33,7 @@
     
     [nCentre addObserver:self selector:@selector(insertNewTodo:) name:@"newTodo" object:nil];
     
+    [self createTodos];
 }
 
 
