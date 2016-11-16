@@ -13,7 +13,8 @@
 
 @interface MasterViewController ()
 
-@property NSMutableArray *listOfToDos;
+@property (nonatomic, strong) NSMutableArray *listOfToDos;
+@property (nonatomic, strong) UISwipeGestureRecognizer *swipeGR;
 
 @end
 
@@ -27,6 +28,11 @@
     UIBarButtonItem *addButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAdd target:self action:@selector(goToAddTodoVC:)];
     self.navigationItem.rightBarButtonItem = addButton;
     self.detailViewController = (DetailViewController *)[[self.splitViewController.viewControllers lastObject] topViewController];
+    
+    self.swipeGR = [[UISwipeGestureRecognizer alloc] initWithTarget:self action:@selector(strikeCell:)];
+    
+    [self.tableView addGestureRecognizer:self.swipeGR];
+    
     
     NSNotificationCenter *nCentre = [NSNotificationCenter defaultCenter];
     
@@ -68,10 +74,6 @@
     }
     [self.tableView reloadData];
 }
-
--(void)tableView:(UITableView *)tableView moveRowAtIndexPath:(NSIndexPath *)sourceIndexPath toIndexPath:(NSIndexPath *)destinationIndexPath{
-}
-
 
 #pragma mark - Segues
 
@@ -126,6 +128,13 @@
     }
 }
 
+-(void)tableView:(UITableView *)tableView moveRowAtIndexPath:(NSIndexPath *)sourceIndexPath toIndexPath:(NSIndexPath *)destinationIndexPath{
+}
+
+-(void)strikeCell:(UISwipeGestureRecognizer *)swipeGR {
+    
+}
+
 
 #pragma mark - Create Todos
 
@@ -152,11 +161,6 @@
     
     [self.listOfToDos addObject:todo3];
 }
-
-
-
-
-
 
 
 @end
