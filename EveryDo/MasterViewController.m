@@ -30,7 +30,7 @@
     self.detailViewController = (DetailViewController *)[[self.splitViewController.viewControllers lastObject] topViewController];
     
     self.swipeGR = [[UISwipeGestureRecognizer alloc] initWithTarget:self action:@selector(strikeCell:)];
-    
+    self.swipeGR.direction = UISwipeGestureRecognizerDirectionRight;
     [self.tableView addGestureRecognizer:self.swipeGR];
     
     
@@ -132,7 +132,10 @@
 }
 
 -(void)strikeCell:(UISwipeGestureRecognizer *)swipeGR {
+    CGPoint location = [swipeGR locationInView:self.tableView];
+    NSIndexPath *swipedIndexPath = [self.tableView indexPathForRowAtPoint:location];
     
+    [self.tableView moveRowAtIndexPath:swipedIndexPath toIndexPath:[NSIndexPath indexPathForRow:self.listOfToDos.count-1 inSection:0]];
 }
 
 
